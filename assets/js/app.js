@@ -64,11 +64,13 @@ function moveImage(e) {
     switch (kc) {
         case 37:
             //Pressed left.
+            if ((left - moveJump) > 0)
             mario.style.left = (left - moveJump) +'px';
             
             break;
         case 38:
             //Pressed up.
+            if ((top - moveJump) > 0)
             mario.style.top = (top - moveJump)  + 'px';
             break;
         case 39:
