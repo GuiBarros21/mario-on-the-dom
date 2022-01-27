@@ -38,19 +38,29 @@ calcScore();
 function moveCoin()
 {
 
-  let radomPlaceX = Math.floor(Math.random() *1000);
-  let radomPlaceY = Math.floor(Math.random() *800);
+  let radomPlaceX = Math.floor(Math.random() *1200);
+  let radomPlaceY = Math.floor(Math.random() *900);
 
  
   coin.style.left = radomPlaceX +'px';
   coin.style.top =  radomPlaceY + 'px';
+
 }
+
+const coinAudio = new Audio('./assets/aduio/smw_coin.wav');
 
 //function that moves mario
 
 const moveJump = 50;
 
 document.addEventListener("keydown", moveImage,false);
+
+function getBigger ()
+{
+  mario.width += 10 +'px';
+  mario.height += 10 +'px';
+
+}
 
 function moveImage(e) {
     let kc = e.keyCode;
@@ -83,9 +93,10 @@ function moveImage(e) {
             break;
     }
   //check if mario got the coin
-   if (isTouching(mario,coin) ==true)
+   if (isTouching(mario,coin) == true)
    {
      console.log(score);
+     coinAudio;
      moveCoin();
      calcScore();
      
